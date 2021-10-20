@@ -86,7 +86,6 @@ int main(void) {
 	printf("\x1b[01;00H All In One Program pack TCH562");
 	printf("\x1b[02;00H A= Button Tester.");
 	printf("\x1b[03;00H B= Spamer");
-	printf("\x1b[04;00H Y= Animate Simple :D");
 	printf("\x1b[05;00H Start= Exit");
 	printf("\x1b[06;00H Just a simple program :D Is in development");
 	
@@ -126,29 +125,21 @@ int main(void) {
 		//Button tester source code
 		//updated to support more buttons, also, clean up the screen.
 		consoleSelect(&bottomScreen);
-	if(keys & KEY_A) printf("\e[1;1H\e[2J");
-	if(keys & KEY_A) printf("\x1b[16;02HYou Pressed A Button!");
-	if(keys & KEY_B) printf("\e[1;1H\e[2J");
-	if(keys & KEY_B) printf("\x1b[16;02HYou Pressed B Button!");
-	if(keys & KEY_Y) printf("\e[1;1H\e[2J");
-	if(keys & KEY_Y) printf("\x1b[16;02HYou Press Y Button");
-	if(keys & KEY_X) printf("\e[1;1H\e[2J");
-	if(keys & KEY_X) printf("\x1b[16;02HYou Press X Button");
-	if(keys & KEY_R) printf("\e[1;1H\e[2J");
-	if(keys & KEY_R) printf("\x1b[16;02HYou Press R");
-	if(keys & KEY_L) printf("\e[1;1H\e[2J");
-	if(keys & KEY_L) printf("\x1b[16;02HYou press L");
-	if(keys & KEY_UP) printf("\e[1;1H\e[2J");
-	if(keys & KEY_UP) printf("\x1b[16;02HYou press DPAD UP");
-	if(keys & KEY_DOWN) printf("\e[1;1H\e[2J");
-	if(keys & KEY_DOWN) printf("\x1b[16;02HYou press DPAD DOWN");
 	
-	if(keys & KEY_RIGHT) printf("\e[1;1H\e[2J");
-	if(keys & KEY_RIGHT) printf("\x1b[16;02HYou press DPAD RIGHT");
-	if(keys & KEY_LEFT) printf("\e[1;1H\e[2J");
-	if(keys & KEY_LEFT) printf("\x1b[16;02HYou press DPAD LEFT");
+		if(keysDown()) consoleClear();
+		if(keys & KEY_A) printf("\x1b[16;02HYou Pressed A Button!");
+		if(keys & KEY_B) printf("\x1b[16;02HYou Pressed B Button!");
+		if(keys & KEY_Y) printf("\x1b[16;02HYou Press Y Button");
+		if(keys & KEY_X) printf("\x1b[16;02HYou Press X Button");
+		if(keys & KEY_R) printf("\x1b[16;02HYou Press R");
+		if(keys & KEY_L) printf("\x1b[16;02HYou press L");
+		if(keys & KEY_UP) printf("\x1b[16;02HYou press DPAD UP");
+		if(keys & KEY_DOWN) printf("\x1b[16;02HYou press DPAD DOWN");
+		if(keys & KEY_RIGHT) printf("\x1b[16;02HYou press DPAD RIGHT");
+		if(keys & KEY_LEFT) printf("\x1b[16;02HYou press DPAD LEFT");
 	
-	if (keys & KEY_START) break;
+		if (keys & KEY_START) break;
+		if (keys & KEY_SELECT) printf("\x1b[16;02HYou press the select button");
 		}
 
 	}
